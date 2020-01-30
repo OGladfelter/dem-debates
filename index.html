@@ -1,20 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" style="height:100%">
+<html>
+
 <head>
-    <title>Dem Reading Level</title>
-    <meta charset="utf-8">
-    <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'><link rel="stylesheet" href="style.css">
-
+    <meta charset='utf-8' />
+    <title>Candidate Debate Catchphrases</title>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
 </head>
+
 <body>
-    <!-- Create a div where the graph will take place -->
-    <div id="my_dataviz"></div>
-
+    <h1>The Best Debate Drinking Game Rules,</h1> 
+    <h1>According To Data Science</h1>
+    <h3>By Oliver Gladfelter</h3>
     
+    
+    <div class="outter">
+        <h2 style="margin-bottom: 0; display:inline-block">Amy Klobuchar's Catchphrases</h2>
+        <div id="klobucharGraph"></div>
+    </div>
 
-    <script src='script.js'></script>
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Andrew Yang's Catchphrases</h2>
+        <div id="yangGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Bernie Sanders' Catchphrases</h2>
+        <div id="sandersGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Elizabeth Warren's Catchphrases</h2>
+        <div id="warrenGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Joe Biden's Catchphrases</h2>
+        <div id="bidenGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Pete Buttigieg's Catchphrases</h2>
+        <div id="peteGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Tom Steyer's Catchphrases</h2>
+        <div id="steyerGraph"></div>
+    </div>
+
+    <!-- prevents last odd graph from centering -->
+    <div class="outter" style="border: none;"></div> 
+
+    <h1>As a bonus, here are the catchphrases of some other candidates</h1>
+
+    <!-- candidates not in Feb debate -->
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Beto O'Rourke's Catchphrases</h2>
+        <div id="betoGraph"></div>
+    </div>
+   
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Cory Booker's Catchphrases</h2>
+        <div id="bookerGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Julián Castro's Catchphrases</h2>
+        <div id="castroGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Kamala Harris' Catchphrases</h2>
+        <div id="harrisGraph"></div>
+    </div>
+
+    <div class="outter">
+        <h2 style="margin-bottom: 0">Tulsi Gabbard's Catchphrases</h2>
+        <div id="gabbardGraph"></div>
+    </div>
+
+    <!-- prevents last odd graph from centering -->
+    <div class="outter" style="border: none;"></div> 
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>

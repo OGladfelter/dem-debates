@@ -1,0 +1,506 @@
+{"Amy Klobuchar": {"Bigrams":
+        [
+        {
+            "name": "public option",
+            "value": 0.085134
+        },
+        {
+            "name": "lead democrat",
+            "value": 0.080430
+        },
+        {
+            "name": "big way",
+            "value": 0.080430
+        },
+        {
+            "name": "insurance years",
+            "value": 0.068940
+        },
+        {
+            "name": "make easier",
+            "value": 0.062592
+        }], 
+    "Trigrams":
+        [{
+            "name": "bills lead democrat",
+            "value": 0.048789
+        },
+        {
+            "name": "barack obama wanted",
+            "value": 0.048789
+        },
+        {
+            "name": "like poker chips",
+            "value": 0.048789
+        },
+        {
+            "name": "long term care",
+            "value": 0.041901
+        },
+        {
+            "name": "universal background checks",
+            "value": 0.037656
+        }]},
+"Andrew Yang": {"Bigrams":
+        [{
+            "name": "$1,000 month",
+            "value": 0.170331
+        },
+        {
+            "name": "freedom dividend",
+            "value": 0.122051
+        },
+        {
+            "name": "dividend $1,000",
+            "value": 0.106795
+        },
+        {
+            "name": "special needs",
+            "value": 0.091717
+        },
+        {
+            "name": "american people",
+            "value": 0.085000
+        }], 
+    "Trigrams":
+        [{
+            "name": "dividend $1,000 month",
+            "value": 0.112151
+        },
+        {
+            "name": "freedom dividend $1,000",
+            "value": 0.096129
+        },
+        {
+            "name": "candidate color stage",
+            "value": 0.064086
+        },
+        {
+            "name": "fourth industrial revolution",
+            "value": 0.055038
+        },
+        {
+            "name": "value added tax",
+            "value": 0.048065
+        }]},
+"Bernie Sanders": {"Bigrams":
+            [{
+                "name": "fossil fuel",
+                "value": 0.127390
+            },
+            {
+                "name": "fuel industry",
+                "value": 0.126559
+            },
+            {
+                "name": "87 million",
+                "value": 0.108068
+            },
+            {
+                "name": "greed corruption",
+                "value": 0.108068
+            },
+            {
+                "name": "pharmaceutical industry",
+                "value": 0.108068
+            }], 
+        "Trigrams":
+            [{
+                "name": "fossil fuel industry",
+                "value": 0.142755
+            },
+            {
+                "name": "drug companies insurance",
+                "value": 0.104687
+            },
+            {
+                "name": "major country earth",
+                "value": 0.088653
+            },
+            {
+                "name": "public colleges universities",
+                "value": 0.088653
+            },  
+            {
+                "name": "500,000 people sleeping",
+                "value": 0.077571
+            }]},
+"Beto O’Rourke": {"Bigrams":
+            [{
+                "name": "el paso",
+                "value": 0.153216
+            },
+            {
+                "name": "fellow americans",
+                "value": 0.087552
+            },
+            {
+                "name": "gun owners",
+                "value": 0.082817
+            },
+            {
+                "name": "mental healthcare",
+                "value": 0.080360
+            },
+            {
+                "name": "meet challenge",
+                "value": 0.080360
+            }], 
+        "Trigrams":
+            [{
+                "name": "el paso texas",
+                "value": 0.133091
+            },
+            {
+                "name": "mental health care",
+                "value": 0.049909
+            },
+            {
+                "name": "non gun owners",
+                "value": 0.049909
+            },
+            {
+                "name": "rewrite immigration laws",
+                "value": 0.049909
+            },
+            {
+                "name": "AR-15s and AK-47s",
+                "value": 0.049909
+            }]},
+"Cory Booker": {"Bigrams":
+            [{
+                "name": "united states",
+                "value": 0.136968
+            },
+            {
+                "name": "common purpose",
+                "value": 0.135636
+            },
+            {
+                "name": "president united",
+                "value": 0.081617
+            },
+            {
+                "name": "corporate consolidation",
+                "value": 0.081382
+            },
+            {
+                "name": "new jersey",
+                "value": 0.081382
+            }], 
+        "Trigrams":
+            [{
+                "name": "cause common purpose",
+                "value": 0.070909
+            },
+            {
+                "name": "criminal justice reform",
+                "value": 0.060897
+            },
+            {
+                "name": "mr vice president",
+                "value": 0.057941
+            },
+            {
+                "name": "moved inner city",
+                "value": 0.042545
+            },
+            {
+                "name": "newark new jersey",
+                "value": 0.042545
+            }]},
+"Elizabeth Warren": {"Bigrams":
+            [{
+                "name": "loan debt",
+                "value": 0.121922
+            },
+            {
+                "name": "student loan",
+                "value": 0.121922
+            },
+            {
+                "name": "giant corporations",
+                "value": 0.097119
+            },
+            {
+                "name": "middle class",
+                "value": 0.085275
+            },
+            {
+                "name": "wealth tax",
+                "value": 0.081461
+            }], 
+        "Trigrams":
+            [{
+                "name": "student loan debt",
+                "value": 0.133828
+            },
+            {
+                "name": "middle class families",
+                "value": 0.102015
+            },
+            {
+                "name": "cent wealth tax",
+                "value": 0.072408
+            },
+            {
+                "name": "public school teacher",
+                "value": 0.072408
+            },
+            {
+                "name": "giant multinational corporations",
+                "value": 0.062064
+            }]},
+"Joe Biden": {"Bigrams":
+            [{
+                "name": "number number",
+                "value": 0.169717
+            },
+            {
+                "name": "fact matter",
+                "value": 0.154329
+            },
+            {
+                "name": "violence women",
+                "value": 0.069883
+            },
+            {
+                "name": "combat troops",
+                "value": 0.068590
+            },
+            {
+                "name": "middle class",
+                "value": 0.066565
+            }], 
+        "Trigrams":
+            [{
+                "name": "violence women act",
+                "value": 0.077229
+            },
+            {
+                "name": "160 million people",
+                "value": 0.055164
+            },
+            {
+                "name": "united states senate",
+                "value": 0.047685
+            },
+            {
+                "name": "number number fact",
+                "value": 0.044131
+            },
+            {
+                "name": "30 trillion dollars",
+                "value": 0.044131
+            }]},
+"Julian Castro": {"Bigrams":
+            [{
+                "name": "section 1325",
+                "value": 0.106448
+            },
+            {
+                "name": "barack obama",
+                "value": 0.073417
+            },
+            {
+                "name": "repeal section",
+                "value": 0.070966
+            },
+            {
+                "name": "immigration plan",
+                "value": 0.070966
+            },
+            {
+                "name": "law firm",
+                "value": 0.060946
+            }], 
+        "Trigrams":
+            [{
+                "name": "repeal section 1325",
+                "value": 0.077229
+            },
+            {
+                "name": "january 20th, 2021",
+                "value": 0.055164
+            },
+            {
+                "name": "good democratic president",
+                "value": 0.047685
+            },
+            {
+                "name": "safety and opportunity",
+                "value": 0.044131
+            },
+            {
+                "name": "21st-century marshall plan",
+                "value": 0.044131
+            }]},
+"Kamala Harris": {"Bigrams":
+            [{
+                "name": "department justice",
+                "value": 0.137231
+            },
+            {
+                "name": "general california",
+                "value": 0.117665
+            },
+            {
+                "name": "states department",
+                "value": 0.117665
+            },
+            {
+                "name": "attorney general",
+                "value": 0.104942
+            },
+            {
+                "name": "american families",
+                "value": 0.099183
+            }], 
+        "Trigrams":
+            [{
+                "name": "states department justice",
+                "value": 0.124896
+            },
+            {
+                "name": "attorney general california",
+                "value": 0.124896
+            },
+            {
+                "name": "united states senate",
+                "value": 0.068548
+            },
+            {
+                "name": "largest justice department",
+                "value": 0.055509
+            },
+            {
+                "name": "vice president biden",
+                "value": 0.051411
+            }]},
+"Pete Buttigieg": {"Bigrams":
+            [{
+                "name": "summon courage",
+                "value": 0.079595
+            },
+            {
+                "name": "medicare want",
+                "value": 0.076926
+            },
+            {
+                "name": "american people",
+                "value": 0.071270
+            },
+            {
+                "name": "american majority",
+                "value": 0.056854
+            },
+            {
+                "name": "endless war",
+                "value": 0.056167
+            }], 
+        "Trigrams":
+            [{
+                "name": "end endless war",
+                "value": 0.047072
+            },
+            {
+                "name": "unify american people",
+                "value": 0.035304
+            },
+            {
+                "name": "dealing climate change",
+                "value": 0.035304
+            },
+            {
+                "name": "summon courage vote",
+                "value": 0.035304
+            },
+            {
+                "name": "assault weapons ban",
+                "value": 0.035304
+            }]},
+"Tom Steyer": {"Bigrams":
+            [{
+                "name": "american people",
+                "value": 0.120555
+            },
+            {
+                "name": "corporations bought",
+                "value": 0.115404
+            },
+            {
+                "name": "climate number",
+                "value": 0.098917
+            },
+            {
+                "name": "state emergency",
+                "value": 0.098917
+            },
+            {
+                "name": "broken government",
+                "value": 0.082431
+            }], 
+        "Trigrams":
+            [{
+                "name": "climate number priority",
+                "value": 0.105936
+            },
+            {
+                "name": "break corporate stranglehold",
+                "value": 0.088280
+            },
+            {
+                "name": "corporations bought government",
+                "value": 0.070624
+            },
+            {
+                "name": "declare state emergency",
+                "value": 0.070624
+            },
+            {
+                "name": "black brown communities",
+                "value": 0.060653
+            }]},
+"Tulsi Gabbard": {"Bigrams":
+            [{
+                "name": "regime change",
+                "value": 0.250389
+            },
+            {
+                "name": "change war",
+                "value": 0.188652
+            },
+            {
+                "name": "al qaeda",
+                "value": 0.147288
+            },
+            {
+                "name": "commander chief",
+                "value": 0.097585
+            },
+            {
+                "name": "national security",
+                "value": 0.096688
+            }], 
+        "Trigrams":
+            [{
+                "name": "regime change war",
+                "value": 0.201723
+            },
+            {
+                "name": "serve commander chief",
+                "value": 0.091692
+            },
+            {
+                "name": "end regime change",
+                "value": 0.073354
+            },
+            {
+                "name": "new cold war",
+                "value": 0.073354
+            },
+            {
+                "name": "regardless race religion",
+                "value": 0.073354
+            }]}
+}

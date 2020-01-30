@@ -1,96 +1,187 @@
-// set the dimensions and margins of the graph
-var margin = {top: 50, right: 10, bottom: 50, left: 10},
-    width = screen.width - margin.left - margin.right,
-    height = 550
+function drawBarGraph(id, graphTitle){ // id of div to draw in, graphTitle is Bigrams or Trigrams
 
-// append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
-.append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-.append("g")
-    .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
-
-// Parse the Data
-d3.csv("./DemDebateReadingScoresData.csv", function(data) {
-
-    // Extract the list of dimensions we want to keep in the plot. Here I keep all except the column called Species
-    dimensions = ["June", "July", "Sept", "Oct", "Nov", "Dec"]
-        
-    // For each dimension, I build a linear scale. I store all in a y object
-    y = d3.scaleLinear()
-        .domain( [6,14] )
-        .range([height, 0])
-        
-    // Build the X scale -> it find the best position for each Y axis
-    x = d3.scalePoint()
-        .range([0, width])
-        .padding(1)
-        .domain(dimensions);
-
-    axisCount = 0;
-
-    // Draw the axes:
-    svg.selectAll("myAxis")
-    // For each dimension of the dataset I add a 'g' element:
-    .data(dimensions).enter()
-    .append("g")
-    .attr("class", "axis")
-    // I translate this element to its right position on the x axis
-    .attr("transform", function(d) { return "translate(" + x(d) + ")"; })
-    // And I build the axis with the call function
-    .each(function(d) { 
-        if (axisCount == 0){
-            axisCount = axisCount + 1;
-            d3.select(this).call(d3.axisLeft().scale(y).ticks(9).tickValues([6,7,8,9,10,11,12,13])); 
-        }
-        else if (axisCount == 5){
-            d3.select(this).call(d3.axisRight().scale(y).ticks(9).tickValues([6,7,8,9,10,11,12,13])); 
-        }
-        else{
-            axisCount = axisCount + 1;
-            d3.select(this).call(d3.axisLeft().scale(y).ticks(9).tickFormat("")); 
-        }})
-    // Add axis title
-    .append("text")
-        .style("text-anchor", "middle")
-        .attr("y", -9)
-        .text(function(d) { return d; })
-        .style("fill", "black")
-        .style('font-size',"20px");
-
-    // auto generate colors array for dots
-    colors = []
-    degreeIncrement = 360 / data.length;
-
-    for (i=0;i<data.length;i++){
-      if (i % 2 == 0){
-        colors.push(["hsl("+i*degreeIncrement+",100%,50%)"])
-      }
-      else {
-        colors.push(["hsl("+(i-1)*degreeIncrement+",100%,33%)"])
-      }
-    }
-
-    for (i=0; i < data.length; i++){
-        for (d=0; d < dimensions.length; d++){
-
-            if (data[i][dimensions[d]]==0){
-                continue;
-            }
-
-            svg.append("circle")
-            .attr("cy", y(data[i][dimensions[d]]))
-            .attr("cx", x(dimensions[d]))
-            .attr("r", 5 )
-            .style("fill", colors[i])
-            .attr("id", data[i]["name"]);
-        }
-    }
-
-
-
-
+//sort bars based on value
+data['Bigrams'] = data['Bigrams'].sort(function (a, b) {
+return d3.ascending(a.value, b.value);
+})
+data['Trigrams'] = data['Trigrams'].sort(function (a, b) {
+    return d3.ascending(a.value, b.value);
 })
 
+//set up svg using margin conventions - we'll need plenty of room on the left for labels
+var margin = {
+top: 15,
+right: 25,
+bottom: 15,
+left: 0
+};
+
+var width = screen.width / 4 - margin.left - margin.right,
+height = screen.height / 3 - margin.top - margin.bottom;
+
+var svg = d3.select("#"+id).append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+.attr("id",id+graphTitle); // id is combo of parameters
+
+var x = d3.scale.linear()
+.range([0, width])
+//.domain([0, 0.250389]);
+.domain([0, d3.max(data[graphTitle], function (d) {
+    return d.value;
+})]);
+
+var y = d3.scale.ordinal()
+.rangeRoundBands([height, 0], .1)
+.domain(data[graphTitle].map(function (d) {
+    return d.name;
+}));
+
+//make y axis to show bar names
+var yAxis = d3.svg.axis()
+.scale(y)
+//no tick marks
+.tickSize(0)
+.orient("left");
+
+var gy = svg.append("g")
+.attr("class", "y axis")
+.call(yAxis)
+
+var bars = svg.selectAll(".bar")
+.data(data[graphTitle])
+.enter()
+.append("g")
+
+//append rects
+rects = bars.append("rect")
+.attr("class", "bar")
+.attr("id",function(d, i) {return id + i})
+.style("fill",function(d, i) {return "rgb(100, 200, " + (i * 51) + ")";})
+.attr("y", function (d) {
+    return y(d.name);
+})
+.attr("height", y.rangeBand())
+.attr("x", 0)
+.attr("width", function (d) {
+    return x(d.value);
+});
+
+//add phrase onto each bar
+phrases = bars.append("text")
+.attr("class", "label")
+.style("alignment-baseline","middle")
+//y position of the label is halfway down the bar
+.attr("y", function (d) {
+    return y(d.name) + y.rangeBand() / 2 + 4;
+})
+//x position is 3 pixels to the right of the bar
+.attr("x", function (d) {
+    return x(0) + 10;
+})
+.text(function (d) {
+    return d.name;
+});
+
+// if (graphTitle=="Bigrams"){
+//     subplot = "2-words"
+// }
+// else{
+//     subplot = "3-words"
+// };
+
+// // subplot title
+// svg.append("text")
+// .attr("x",width/2)
+// .attr("y",0)
+// .attr("font-size","20px")
+// .text(subplot)
+// .style("text-anchor","middle");
+
+};
+
+// fill every div with the bars and catchphrases
+d3.json("data.json", function(error, json) {
+    data = json['Amy Klobuchar'];
+    //drawBarGraph("klobucharGraph","Bigrams");
+    drawBarGraph("klobucharGraph", "Trigrams");
+
+    data = json['Andrew Yang'];
+    //drawBarGraph("yangGraph","Bigrams");
+    drawBarGraph("yangGraph", "Trigrams");
+
+    data = json['Bernie Sanders'];
+    //drawBarGraph("sandersGraph","Bigrams");
+    drawBarGraph("sandersGraph", "Trigrams");
+
+    data = json["Beto O’Rourke"];
+    //drawBarGraph("betoGraph","Bigrams");
+    drawBarGraph("betoGraph", "Trigrams");
+
+    data = json["Cory Booker"];
+    //drawBarGraph("bookerGraph","Bigrams");
+    drawBarGraph("bookerGraph", "Trigrams");
+
+    data = json["Elizabeth Warren"];
+    //drawBarGraph("warrenGraph","Bigrams");
+    drawBarGraph("warrenGraph", "Trigrams");
+    
+    data = json["Joe Biden"];
+    //drawBarGraph("bidenGraph","Bigrams");
+    drawBarGraph("bidenGraph", "Trigrams");
+    
+    data = json["Julian Castro"];
+    //drawBarGraph("castroGraph","Bigrams");
+    drawBarGraph("castroGraph", "Trigrams");
+    
+    data = json["Kamala Harris"];
+    //drawBarGraph("harrisGraph","Bigrams");
+    drawBarGraph("harrisGraph", "Trigrams");
+    
+    data = json["Pete Buttigieg"];
+    //drawBarGraph("peteGraph","Bigrams");
+    drawBarGraph("peteGraph", "Trigrams");
+    
+    data = json["Tom Steyer"];
+    //drawBarGraph("steyerGraph","Bigrams");
+    drawBarGraph("steyerGraph", "Trigrams");
+    
+    data = json["Tulsi Gabbard"];
+    //drawBarGraph("gabbardGraph","Bigrams");
+    drawBarGraph("gabbardGraph", "Trigrams");
+});
+
+
+// for tool tip - all comes from quotes.json data
+d3.json("quotes.json", function(error, quotes) {
+
+    // Tool tip 
+    var tooltip = d3.selectAll("div")
+    .append("div")
+    .style("max-width","200px")
+    .attr('class', 'tooltip');
+
+    d3.selectAll('rect')
+    .on("mouseover", function(d){
+
+        return tooltip
+        .style("visibility", "visible")
+        .style("left", (d3.event.pageX + 50) + "px")
+        .style("top", (d3.event.pageY + 50) + "px")
+        .html(quotes[d3.select(this)[0][0].id]);
+    })
+    .on("mouseout", function(d, i){
+
+        // return tooltip
+        // .style("visibility", "hidden")
+    });
+
+    d3.select('body').on("click", function(){
+
+        return tooltip
+        .style("visibility", "hidden")
+    });
+
+});
